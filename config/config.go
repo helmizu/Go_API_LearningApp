@@ -11,7 +11,3 @@ func (c *Config) Init() {
 	c.Server = "localhost"
 	c.Database = "testing"
 }
-
-func (c Config) Read() Config {
-	return c
-}

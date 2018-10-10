@@ -12,8 +12,10 @@ import (
 	"github.com/gorilla/mux"
 )
 
-var config = cfg.Config{}
-var db = library.UserCtr{}
+var (
+	config = cfg.Config{}
+	db     = library.UserCtr{}
+)
 
 func init() {
 	config.Init()
