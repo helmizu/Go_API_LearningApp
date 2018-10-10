@@ -1,14 +1,26 @@
 package main
 
 import (
+	"PW/library"
 	"log"
 	"net/http"
 
+	cfg "PW/config"
 	ctr "PW/controllers"
 
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 )
+
+var config = cfg.Config{}
+var db = library.UserCtr{}
+
+func init() {
+	config.Init()
+	db.Server = config.Server
+	db.Database = config.Database
+	db.Connect()
+}
 
 func main() {
 	r := mux.NewRouter()

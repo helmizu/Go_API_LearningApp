@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 
 	"PW/config"
@@ -44,13 +45,15 @@ func CariGuru(w http.ResponseWriter, r *http.Request) {
 // DaftarGuru use to POST a new user
 func DaftarGuru(w http.ResponseWriter, r *http.Request) {
 	defer r.Body.Close()
-	var guru models.GuruPrimary
+	var guru *models.GuruPrimary
 	if err := json.NewDecoder(r.Body).Decode(&guru); err != nil {
 		res.RespondWithError(w, http.StatusBadRequest, "Invalid request payload")
 		return
 	}
+
 	guru.ID = bson.NewObjectId()
-	if err := lib.SignupGuru(guru); err != nil {
+	fmt.Println(*guru)
+	if err := lib.SignupGuru(*guru); err != nil {
 		res.RespondWithError(w, http.StatusInternalServerError, err.Error())
 		return
 	}

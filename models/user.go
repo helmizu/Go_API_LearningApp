@@ -43,16 +43,14 @@ type sekolah struct {
 }
 
 type pendidikan struct {
-	ID  bson.ObjectId `bson:"_id" json:"id"`
-	SD  sekolah       `bson:"sd" json:"sd"`
-	SMP sekolah       `bson:"smp" json:"smp"`
-	SMA sekolah       `bson:"sma" json:"sma"`
-	PT  sekolah       `bson:"pt" json:"pt"`
+	SD  sekolah `bson:"sd" json:"sd"`
+	SMP sekolah `bson:"smp" json:"smp"`
+	SMA sekolah `bson:"sma" json:"sma"`
+	PT  sekolah `bson:"pt" json:"pt"`
 }
 
 type info struct {
-	ID        bson.ObjectId `bson:"_id" json:"id"`
-	Deskripsi string        `bson:"deskripsi" json:"deskripsi"`
-	Prestasi  string        `bson:"prestasi" json:"prestasi"`
-	Bidang    []string      `bson:"bidang" json:"bidang"`
+	Deskripsi string   `bson:"deskripsi" json:"deskripsi"`
+	Prestasi  string   `bson:"prestasi" json:"prestasi"`
+	Bidang    []string `bson:"bidang" json:"bidang"`
 }

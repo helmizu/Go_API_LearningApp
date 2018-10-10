@@ -9,7 +9,7 @@ type Config struct {
 //Init DB
 func (c *Config) Init() {
 	c.Server = "localhost"
-	c.Database = "GoLearn"
+	c.Database = "testing"
 }
 
 func (c Config) Read() Config {
